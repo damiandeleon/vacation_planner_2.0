@@ -1,0 +1,188 @@
+Style.css
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color:  #D1EEEC;
+}
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    text-align: center;
+    background-color: teal;
+    padding: 10px;
+    font-size: 50px;
+    color: white;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+img {
+    max-width: 100%;
+    width:  500px;
+    height: 500px;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.travelbtn {
+    width: 150px;
+
+}
+
+p{
+    text-align: center;
+    font-size: 25px;
+    color: teal;
+}
+
+.modal-content {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+form {
+    padding: 50px;
+}
+
+input {
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+}
+
+#tasks {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+#weatherforecast, #eats {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    text-align: center;
+    list-style-position: inside;
+}
+
+.tilecolor {
+    background-color: teal;
+    color: white;
+    position: static;
+}
+
+.cardone, .cardtwo, .cardtwo, .cardthree, .cardfour, .cardfive {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    width: 190px;
+    font-size: 15px;
+    position: static;
+    color: teal;
+}
+
+p{
+    text-align: center;
+    font-size: 25px;
+} 
+
+.bg-modal2 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content2 {
+    width: 1000px;
+    height: 650px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.form2 {
+    padding: 50px;
+}
+
+.bg-modal3 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content3 {
+    width: 1000px;
+    height: 650px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.bg-modal4 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content4 {
+    width: 1000px;
+    height: 650px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+#greeting {
+    font-size: 16px;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bulma and Our CSS stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Your Vacation Details</title>
+</head>
+
+<body>
+    <header>Plan Your Perfect Vacation</header>
+    <!--First Modal-->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <form action="">
+                <p id="greeting">Please enter your first name:</p>
+                <input class="firstName" type="text" placeholder="First Name">
+                <a href="" class="button firstSubmit">Submit</a>
+            </form>
+        </div>
+    </div>
+    <!--Second Modal-->
+    <div class="bg-modal2">
+        <div class="modal-content2">
+            <p>Pick your vacation theme:</p>
+            <div class="columns is-mobile is-mobile is-desktop is-tablet is-widescreen is-fullhd" class="button"
+                id="themes">
+                <!-- COLUMN 1-->
+                <div class="column">
+                    <img src="./assets/deployedPhotos/Mountain_destination.jpeg"
+                        alt="cabin at foot of mountain">
+                    <button class="button is-info is-light" id="mountains">Mountains</button>
+                </div>
+
+                <!-- COLUMN 2-->
+                <div class="column">
+                    <img src="./assets/deployedPhotos/beach_destination.jpeg"
+                        alt="couple lounging near beachfront">
+                    <button class="button is-info is-light" id="beach">Beach</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Third Modal-->
+    <div class="bg-modal3">
+        <div class="modal-content3">
+            <p>Pick your mountain adventure:</p>
+            <div id="mountainlocations">
+                <div class="columns is-mobile is-mobile is-desktop is-tablet is-widescreen is-fullhd" class="button">
+                    <!-- COLUMN 3-->
+                    <div class="column center">
+                        <img src="./assets/deployedPhotos/Breckenridge.jpeg"
+                            alt="Breckenridge" class="winterimages">
+                        <button class="button is-info is-light travelbtn" id="breckenridge"
+                            value="Breckenridge">Breckenridge</button>
+                    </div>
+                    <div class="column center">
+                        <img src="./assets/deployedPhotos/Moraine_Lake.jpeg"
+                            alt="Banff National Park" class="winterimages">
+                        <button class="button is-info is-light travelbtn" id="banff" value="Banff National Park">Banff
+                            National Park</button>
+                    </div>
+                    <div class="column center">
+                        <img src="./assets/deployedPhotos/Swiss-Alps.jpeg"
+                            alt="Swiss Alps" class="winterimages">
+                        <button class="button is-info is-light travelbtn" id="snowshoe" value="Lucerne">Lucerne</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fourth Modal-->
+    <div class="bg-modal4">
+        <div class="modal-content4">
+            <p>Pick your beach adventure:</p>
+            <div id="beachlocations">
+                <div class="columns is-mobile is-mobile is-desktop is-tablet is-widescreen is-fullhd" class="button">
+                    <!-- COLUMN 4-->
+                    <div class="column">
+                        <img src="./assets/deployedPhotos/Malibu.jpeg" alt="Cabo">
+                        <button class="button is-info is-light" id="malibu" value="Malibu">Malibu</button>
+                    </div>
+
+                    <div class="column">
+                        <img src="./assets/deployedPhotos/Siesta_Key.png"
+                            alt="Siesta Key">
+                        <button class="button is-info is-light" id="flkeys" value="Florida Keys">Siesta Key</button>
+                    </div>
+
+                    <div class="column">
+                        <img src="./assets/deployedPhotos/Hawaii.jpeg"
+                            alt="Hawaii">
+                        <button class="button is-info is-light" id="hawaii" value="Hawaii">Kihei on Maui</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- To Do List For Prior to Leaving -->
+    <div class="tile is-ancestor is-clearfix" id="tasks">
+        <div class="tile is-vertical is-8">
+            <div class="tile">
+                <div class="tile is-parent is-vertical">
+                    <article class="tile is-child notification tilecolor">
+                        <p class="title">Tasks Before You Go</p>
+                        <p class="subtitle">Here is a quick list of items to complete prior to leaving!</p>
+                        <div class="content">
+                            <ul>
+                                <li>Plan Lodging</li>
+                                <li>Plan Travel</li>
+                                <li>Plan Transportation once you have arrived</li>
+                                <li>Use Our Restaurant Finder to get recommendations for dining</li>
+                                <li>Put a list of activites together</li>
+                                <li>If you have pets, find boarding</li>
+                                <li>Pack & get ready for the time of your life!</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="weatherforecast">
+        <!-- Weather API -->
+        <div class="card cardone">
+            <div class="card-content">
+                <div class="content" id="1">
+                </div>
+            </div>
+        </div>
+        <div class="card cardtwo">
+            <div class="card-content">
+                <div class="content" id="2">
+                </div>
+            </div>
+        </div>
+        <div class="card cardthree">
+            <div class="card-content">
+                <div class="content" id="3">
+                </div>
+            </div>
+        </div>
+        <div class="card cardfour">
+            <div class="card-content">
+                <div class="content" id="4">
+                </div>
+            </div>
+        </div>
+        <div class="card cardfive">
+            <div class="card-content">
+                <div class="content" id="5">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Travel API -->
+    <div class="tile is-ancestor is-clearfix" id="eats">
+        <div class="tile is-vertical is-8">
+            <div class="tile">
+                <div class="tile is-parent is-vertical eats">
+                    <article class="tile is-child notification tilecolor">
+                        <p class="title">Eateries to Checkout</p>
+                        <p class="subtitle">Restaurant Finder</p>
+                        <div class="content">
+                            <ul id="eateryList">
+                                <li id="eatAt1"></li>
+                                <li id="eatAt2"></li>
+                                <li id="eatAt3"></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
