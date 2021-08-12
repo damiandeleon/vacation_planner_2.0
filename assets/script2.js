@@ -201,33 +201,47 @@ function malibu(event) {
             return response.json()
         })
         .then(function (data) {
-
+           //cycle 5 times, with each cycle do the following to create a set of cards for each day in the 5 day forecast...
             for (i = 1; i < 6; i++) {
+                //find the elements in the index.html page with the id of 1,2,3,4,and 5 (with each pass) and assign it a variable called "weatherCardMalibu"
                 var weatherCardMalibu = document.getElementById(i);
+
+                //create the following elements for each pass
                 var divForImg = document.createElement("div");
                 var imgIconMalibu = document.createElement("img");
+                var malibuDayTemp = document.createElement("div");
+                var malibuNightTemp = document.createElement("div");
+                var humidityMalibu = document.createElement("div");
+                var windMalibu = document.createElement("div");
 
+                //code to create and populate the dates for each 5 day card
                 var dateMalibu = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 weatherCardMalibu.textContent = dateMalibu;
+
+                //style and format the image icon, and append it to the card with each pass
                 divForImg.style = "text-align: center; display: flex; justify-content: center;";
                 imgIconMalibu.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                 imgIconMalibu.style = "width: 45px; height: 45px;"
                 divForImg.append(imgIconMalibu);
-                weatherCardMalibu.append(divForImg);
 
-                var weatherForecastMalibu = document.createElement("div");
-                weatherForecastMalibu.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F"
-                var malibuNightTemp = document.createElement("div");
-                malibuNightTemp.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F"
-                var humidityMalibu = document.createElement("div");
-                humidityMalibu = "Humidity: " + data.daily[i].humidity + "%";
-                var windMalibu = document.createElement("div");
-                windMalibu.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
-                weatherForecastMalibu.style = "justify-content: center;"
+                //style and format the Day temp element
+                malibuDayTemp.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
+                malibuDayTemp.style = "justify-content: center;";
+
+                //style and format the Night temp element
+                malibuNightTemp.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F";
                 malibuNightTemp.style = "justify-content: center;"
+
+                //style and format the humidity
+                humidityMalibu.innerHTML = "Humidity: " + data.daily[i].humidity + "%";
                 humidityMalibu.style = "justify-content: center;"
+
+                //style and format the wind speed
+                windMalibu.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
                 windMalibu.style = "justify-content: center;"
-                weatherCardMalibu.append(weatherForecastMalibu, malibuNightTemp, humidityMalibu, windMalibu);
+
+                //append each item to the card
+                weatherCardMalibu.append(divForImg, malibuDayTemp, malibuNightTemp, humidityMalibu, windMalibu);
             }
         })
     getEatMalibu(eatMalibu);
@@ -263,37 +277,48 @@ function flKeys(event) {
             return response.json()
         })
         .then(function (data) {
-
+            //cycle 5 times, with each cycle do the following to create a set of cards for each day in the 5 day forecast...
             for (i = 1; i < 6; i++) {
+                //find the elements in the index.html page with the id of 1,2,3,4,and 5 (with each pass) and assign it a variable called "weatherCardFlKeys"
                 var weatherCardFlKeys = document.getElementById(i);
+
+                //create the following elements for each pass
                 var divForImg = document.createElement("div");
                 var imgIconFlKeys = document.createElement("img");
+                var flKeysDay = document.createElement("div");
+                var flKeysNight = document.createElement("div");
+                var flHumidity = document.createElement("div");
+                var flWind = document.createElement("div");
 
+                //code to create and populate the dates for each 5 day card
                 var dateFlKeys = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 weatherCardFlKeys.textContent = dateFlKeys;
+
+                //style and format the image icon, and append it to the card with each pass
                 divForImg.style = "text-align: center; display: flex; justify-content: center;";
                 imgIconFlKeys.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                 imgIconFlKeys.style = "width: 45px; height: 45px;"
                 divForImg.append(imgIconFlKeys)
-                weatherCardFlKeys.append(divForImg);
 
-                var weatherForecastFlKeys = document.createElement("div");
-                weatherForecastFlKeys.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
-                weatherForecastFlKeys.style = "justify-content: center;"
-                var flKeysNight = document.createElement("div");
+                //style and format the Day temp element
+                flKeysDay.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
+                flKeysDay.style = "justify-content: center;"
+
+                //style and format the Night temp element 
                 flKeysNight.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F";
                 flKeysNight.style = "justify-content: center;"
-                var flHumidity = document.createElement("div");
+
+                //style and format the humidity 
                 flHumidity.innerHTML = "Humidity: " + data.daily[i].humidity + "%";
                 flHumidity.style = "justify-content: center;"
-                var flWind = document.createElement("div");
+
+                //style and format the wind speed 
                 flWind.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
                 flWind.style = "justify-content: center;"
 
-                weatherCardFlKeys.append(weatherForecastFlKeys, flKeysNight, flHumidity, flWind);
-
+                //append each item to the card
+                weatherCardFlKeys.append(divForImg, flKeysDay, flKeysNight, flHumidity, flWind);
             }
-
         })
     getEatFlKeys(eatFlKeys);
 }
@@ -328,33 +353,47 @@ function hawaii(event) {
             return response.json()
         })
         .then(function (data) {
-            console.log(data);
+            //cycle 5 times, with each cycle do the following to create a set of cards for each day in the 5 day forecast...
             for (i = 1; i < 6; i++) {
+                //find the elements in the index.html page with the id of 1,2,3,4,and 5 (with each pass) and assign it a variable called "weatherCardHawaii"
                 var weatherCardHawaii = document.getElementById(i);
+
+                //create the following elements for each pass
                 var divForImg = document.createElement("div");
                 var imgIconHawaii = document.createElement("img");
+                var hawaiiDay = document.createElement("div");
+                var hawaiiNight = document.createElement("div");
+                var hawaiiHumidity = document.createElement("div");
+                var hawaiiWind = document.createElement("div");
 
+                //code to create and populate the dates for each 5 day card
                 var dateHawaii = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 weatherCardHawaii.textContent = dateHawaii;
+
+                //style and format the image icon, and append it to the card with each pass
                 divForImg.style = "text-align: center; display: flex; justify-content: center;";
                 imgIconHawaii.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                 imgIconHawaii.style = "width: 45px; height: 45px;"
                 divForImg.append(imgIconHawaii)
-                weatherCardHawaii.append(divForImg);
 
-                var weatherForecastHawaii = document.createElement("div");
-                weatherForecastHawaii.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
-                weatherForecastHawaii.style = "justify-content: center;"
-                var hawaiiNight = document.createElement("div");
+               //style and format the Day temp element
+                hawaiiDay.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
+                hawaiiDay.style = "justify-content: center;"
+          
+                //style and format the Night temp element 
                 hawaiiNight.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F";
                 hawaiiNight.style = "justify-content: center;"
-                var hawaiiHumidity = document.createElement("div");
+                
+                //style and format the humidity
                 hawaiiHumidity.innerHTML = "Humidity: " + data.daily[i].humidity + "%";
                 hawaiiHumidity.style = "justify-content: center;"
-                var hawaiiWind = document.createElement("div");
+              
+                //style and format the wind speed
                 hawaiiWind.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
                 hawaiiWind.style = "justify-content: center;"
-                weatherCardHawaii.append(weatherForecastHawaii, hawaiiNight, hawaiiHumidity, hawaiiWind);
+                
+                //append each item to the card
+                weatherCardHawaii.append(divForImg, hawaiiDay, hawaiiNight, hawaiiHumidity, hawaiiWind);
             }
         })
     getEatHawaii(eatHawaii);
@@ -390,33 +429,47 @@ function breckenridge(event) {
             return response.json()
         })
         .then(function (data) {
-
+            //cycle 5 times, with each cycle do the following to create a set of cards for each day in the 5 day forecast...
             for (i = 1; i < 6; i++) {
-                var weatherCardBreckenridge = document.getElementById(i);
+                //find the elements in the index.html page with the id of 1,2,3,4,and 5 (with each pass) and assign it a variable called "weatherCardBreck"
+                var weatherCardBreck = document.getElementById(i);
+
+                //create the following elements for each pass
                 var divForImg = document.createElement("div");
                 var imgIconBreckenridge = document.createElement("img");
+                var breckDay = document.createElement("div");
+                var breckNight = document.createElement("div");
+                var breckHumidity = document.createElement("div");
+                var breckWind = document.createElement("div");
 
-                var dateBreckenridge = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
-                weatherCardBreckenridge.textContent = dateBreckenridge;
+                //code to create and populate the dates for each 5 day card
+                var dateBreck = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
+                weatherCardBreck.textContent = dateBreck;
+
+                //style and format the image icon, and append it to the card with each pass
                 divForImg.style = "text-align: center; display: flex; justify-content: center;";
                 imgIconBreckenridge.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                 imgIconBreckenridge.style = "width: 45px; height: 45px;"
                 divForImg.append(imgIconBreckenridge)
-                weatherCardBreckenridge.append(divForImg);
 
-                var weatherForecastBreckenridge = document.createElement("div");
-                weatherForecastBreckenridge.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
-                weatherForecastBreckenridge.style = "justify-content: center;"
-                var breckNight = document.createElement("div");
+                //style and format the Day temp element
+                breckDay.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
+                breckDay.style = "justify-content: center;"
+          
+                //style and format the Night temp element
                 breckNight.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F";
                 breckNight.style = "justify-content: center;"
-                var breckHumidity = document.createElement("div");
+              
+                //style and format the humidity
                 breckHumidity.innerHTML = "Humidity: " + data.daily[i].humidity + "%";
                 breckHumidity.style = "justify-content: center;"
-                var breckWind = document.createElement("div");
+           
+                //style and format the wind speed
                 breckWind.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
                 breckWind.style = "justify-content: center;"
-                weatherCardBreckenridge.append(weatherForecastBreckenridge, breckNight, breckHumidity, breckWind);
+
+                //append each item to the card
+                weatherCardBreck.append(divForImg, breckDay, breckNight, breckHumidity, breckWind);
             }
         })
     getEatBreckenridge(eatBreckenridge);
@@ -452,34 +505,47 @@ function banff(event) {
             return response.json()
         })
         .then(function (data) {
-
+            //cycle 5 times, with each cycle do the following to create a set of cards for each day in the 5 day forecast...
             for (i = 1; i < 6; i++) {
+                //find the elements in the index.html page with the id of 1,2,3,4,and 5 (with each pass) and assign it a variable called "weatherCardBanff"
                 var weatherCardBanff = document.getElementById(i);
+
+                //create the following elements for each pass 
                 var divForImg = document.createElement("div");
                 var imgIconBanff = document.createElement("img");
+                var banffDay = document.createElement("div");
+                var banffNight = document.createElement("div");
+                var banffHumidity = document.createElement("div");
+                var banffWind = document.createElement("div");
 
+                //code to create and populate the dates for each 5 day card
                 var dateBanff = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 weatherCardBanff.textContent = dateBanff;
+
+                //style and format the image icon, and append it to the card with each pass
                 divForImg.style = "text-align: center; display: flex; justify-content: center;";
                 imgIconBanff.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                 imgIconBanff.style = "width: 45px; height: 45px;"
                 divForImg.append(imgIconBanff);
-                weatherCardBanff.append(divForImg);
 
-                var weatherForecastBanff = document.createElement("div");
-                weatherForecastBanff.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
-                weatherForecastBanff.style = "justify-content: center;"
-                var banffNight = document.createElement("div");
+                //style and format the Day temp element
+                banffDay.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
+                banffDay.style = "justify-content: center;"
+                
+                //style and format the Night temp element 
                 banffNight.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F";
                 banffNight.style = "justify-content: center;"
-                var banffHumidity = document.createElement("div");
+         
+                     //style and format the humidity 
                 banffHumidity.innerHTML = "Humidity: " + data.daily[i].humidity + "%";
                 banffHumidity.style = "justify-content: center;"
-                var banffWind = document.createElement("div");
+        
+                //style and format the wind speed 
                 banffWind.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
                 banffWind.style = "justify-content: center;"
 
-                weatherCardBanff.append(weatherForecastBanff, banffNight, banffHumidity, banffWind);
+                //append each item to the card
+                weatherCardBanff.append(divForImg, banffDay, banffNight, banffHumidity, banffWind);
             }
         })
     getEatBanff(eatBanff);
@@ -515,33 +581,47 @@ function snowshoe(event) {
             return response.json()
         })
         .then(function (data) {
-
+             //cycle 5 times, with each cycle do the following to create a set of cards for each day in the 5 day forecast...
             for (i = 1; i < 6; i++) {
+                //find the elements in the index.html page with the id of 1,2,3,4,and 5 (with each pass) and assign it a variable called "weatherCardSnowshoe"
                 var weatherCardSnowshoe = document.getElementById(i);
+
+                //create the following elements for each pass
                 var divForImg = document.createElement("div");
                 var imgIconSnowshoe = document.createElement("img");
+                var snowshoeDay = document.createElement("div");
+                var snowshoeNight = document.createElement("div");
+                var snowshoeHumidity = document.createElement("div");
+                var snowshoeWind = document.createElement("div");
 
+                //code to create and populate the dates for each 5 day card
                 var dateSnowshoe = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 weatherCardSnowshoe.textContent = dateSnowshoe;
+
+                //style and format the image icon, and append it to the card with each pass
                 divForImg.style = "text-align: center; display: flex; justify-content: center;";
                 imgIconSnowshoe.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png");
                 imgIconSnowshoe.style = "width: 45px; height: 45px;"
                 divForImg.append(imgIconSnowshoe);
-                weatherCardSnowshoe.append(divForImg);
 
-                var weatherForecastSnowshoe = document.createElement("div");
-                weatherForecastSnowshoe.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
-                weatherForecastSnowshoe.style = "justify-content: center;"
-                var snowshoeNight = document.createElement("div");
+                //style and format the Day temp element
+                snowshoeDay.innerHTML = "Day Temp: " + data.daily[i].temp.day + "°F";
+                snowshoeDay.style = "justify-content: center;"
+            
+                //style and format the Night temp element 
                 snowshoeNight.innerHTML = "Night Temp: " + data.daily[i].temp.night + "°F";
                 snowshoeNight.style = "justify-content: center;"
-                var snowshoeHumidity = document.createElement("div");
+             
+                //style and format the humidity 
                 snowshoeHumidity.innerHTML = "Humidity: " + data.daily[i].humidity + "%";
                 snowshoeHumidity.style = "justify-content: center;"
-                var snowshoeWind = document.createElement("div");
+               
+                //style and format the wind speed 
                 snowshoeWind.innerHTML = "Wind Speed: " + data.daily[i].wind_speed + "MPH";
                 snowshoeWind.style = "justify-content: center;"
-                weatherCardSnowshoe.append(weatherForecastSnowshoe, snowshoeNight, snowshoeHumidity, snowshoeWind);
+
+                //append each item to the card
+                weatherCardSnowshoe.append(divForImg, snowshoeDay, snowshoeNight, snowshoeHumidity, snowshoeWind);
             }
         })
     getEatSnowshoe(eatSnowshoe);
