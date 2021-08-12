@@ -6,7 +6,7 @@ Style.css
 }
 
 html {
-    background-color:  #D1EEEC;
+    background-color:  #e1d1ee;
 }
 
 .bg-modal {
@@ -20,11 +20,19 @@ html {
     align-items: center;
 }
 
-header{
+header {
     text-align: center;
-    background-color: teal;
+    background-color: rgb(83, 14, 148);
     padding: 10px;
     font-size: 50px;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    background-color: rgb(83, 14, 148);
+    padding: 0px;
+    font-size: 40px;
     color: white;
 }
 
@@ -33,11 +41,11 @@ header{
 }
 
 img {
+    display: flex;
     max-width: 100%;
     width:  500px;
     height: 500px;
     object-fit: cover;
-    margin-top: 30px;
 }
 
 .center {
@@ -51,10 +59,10 @@ img {
 
 }
 
-p{
+p {
     text-align: center;
     font-size: 25px;
-    color: teal;
+    color: rgb(83, 14, 148);
 }
 
 .modal-content {
@@ -65,6 +73,10 @@ p{
     text-align: center;
     padding: 20px;
     position: relative;
+}
+
+.title, .subtitle {
+    color: white;
 }
 
 form {
@@ -85,17 +97,19 @@ input {
 
 
 #weatherforecast, #eats {
-    display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
 li {
     text-align: center;
     list-style-position: inside;
+    list-style-type: square;
+    margin-left: -25px;
 }
 
 .tilecolor {
-    background-color: teal;
+    background-color: rgb(83, 14, 148);
     color: white;
     position: static;
 }
@@ -103,12 +117,13 @@ li {
 .cardone, .cardtwo, .cardtwo, .cardthree, .cardfour, .cardfive {
     padding: 10px;
     margin: 10px;
-    display: flex;
-    justify-content: center;
-    width: 190px;
+    /* display: flex; */
+    text-align: center;
+    width: auto;
+    height: auto;
     font-size: 15px;
     position: static;
-    color: teal;
+    color: rgb(83, 14, 148);
 }
 
 p{
@@ -185,4 +200,13 @@ p{
 
 #greeting {
     font-size: 16px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.notification {
+    padding: unset;
 }
